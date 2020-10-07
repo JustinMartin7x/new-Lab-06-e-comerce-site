@@ -25,20 +25,24 @@ body {
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
+    /* background-color: var(--color2); */
 }
 
 main {
+    height: auto;
+    background-image: url(../assets/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center ;
     margin-bottom: calc(var(--footer-height));
 }
 
 section {
-    background-color: var(--color5);
-    width: 1000px;
+
+    width: 75%;
     max-width: 80%;
     display: flex;
     flex-direction: column;
@@ -48,13 +52,13 @@ section {
     padding-bottom: var(--gutter);
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
+   
+    
 }
 
 header {
     display: flex;
     justify-content: flex-end;
-    background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);
 }
@@ -68,6 +72,7 @@ footer {
 
 
 h2 {
+    background-color: darkkhaki;
     font-size: 1.8rem;
     font-weight: bold;
 }
@@ -77,6 +82,9 @@ h2 {
 }
 
 .main-logo {
+    height: 15%;
+    width: 15%;
+    border-radius: 125px;
     animation: pulse 5s infinite ease-in-out;
 }
 
@@ -121,5 +129,35 @@ footer {
     80% {
         transform: rotate3d(10, 10, 10, 50deg) scale(1);
     }
+p {
+    border-style:solid black;
+}
+.name {
+    font-size: 1em;
+}
 
   }
+  li {
+    border-style: solid;
+    background-color: rgb(221, 154, 66);
+    height: 525px;
+    width: 200px;
+    margin: 1em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    text-align: center;
+  }
+       
+  
+img {
+    border-radius: 15px;
+      height: 100px;
+      width: 150px;
+  }
+button {
+    border-radius: 15px;
+    background-color: brown;
+    margin-top: -.5em;
+    justify-content: center;
+}
