@@ -1,6 +1,7 @@
 // import functions and grab DOM elements
-import { renderItems } from './utils.js';
-import { items } from './data.js';
+import { renderItems, getLocalStorageItems } from './utils.js';
+// import { items } from './data.js';
+
 
 // initialize state
 
@@ -8,13 +9,13 @@ import { items } from './data.js';
 
 
 
-
+const localStorageItems = getLocalStorageItems();
 
 
 const ul = document.querySelector('#lists');
 
-for (let i = 0; i < items.length; i++) {
-    const item = items[i];
+for (let i = 0; i < localStorageItems.length; i++) {
+    const item = localStorageItems[i];
     const li = renderItems(item);
     ul.appendChild(li);
 }

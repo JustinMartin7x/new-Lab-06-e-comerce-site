@@ -1,9 +1,8 @@
-import { items } from './data.js';
+import { items as hardCodedItems } from './data.js';
 
-export const CART = 'CART';
+import { CART, PRODUCTS } from './constants.js';
 
-
-    export function renderItems(items){
+export function renderItems(items){
     
     const li = document.createElement('li');
     const name = document.createElement('h3');
@@ -91,5 +90,15 @@ export function setInLocalStorage(key, value) {
     const stringyItem = JSON.stringify(value);
     localStorage.setItem(key, stringyItem);
     return value;
+
+}
+
+export function getLocalStorageItems() {
+    let localStorageItems = JSON.parse(localStorage.getItem(PRODUCTS));
+    if (!localStorageItems) {
+        const stringyItems = JSON.stringify(hardCodedItems);
+        localStorage.setItem(PRODUCTS, stringyItems);
+        localStorageItems = hardCodedItems;
+    } return localStorageItems;
 
 }
