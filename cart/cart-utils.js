@@ -1,5 +1,6 @@
 import { findById } from '../utils.js';
 import { items } from '../data.js';
+import { getFromLocalStorage } from '../utils.js';
 
 
 
@@ -45,13 +46,17 @@ export function calcTotal(cart, items) {
     return totalCost;
 }
 
-export const cartArray = [
-    { 
-        id: '001',
-        quantity: '1',
-    }, 
-    {
-        id: '002',
-        quantity: '5',
-    },
-];
+
+
+
+
+// export const cartArray = [
+//     { 
+//         id: '001',
+//         quantity: '1',
+//     }, 
+//     {
+//         id: '002',
+//         quantity: '5',
+//     },
+// ];
