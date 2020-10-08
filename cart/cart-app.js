@@ -1,9 +1,10 @@
-import { renderTable, cartArray, calcTotal } from './cart-utils.js';
+import { renderTable, calcTotal } from './cart-utils.js';
 import { items } from '../data.js';
+import { CART, getFromLocalStorage } from '../utils.js';
 
 
 
-
+const cartArray = getFromLocalStorage(CART) || [];
 
 
 const table = document.querySelector('tbody');
@@ -20,3 +21,15 @@ console.log(totalPrice);
 
 
 totalToUser.textContent = `Total Cost ${totalPrice} gold`;
+
+
+const specialButton = document.getElementById('specialButton');
+
+specialButton.addEventListener('click', () => {
+    const fromCart = JSON.stringify(cartArray, true, 2);
+    alert(fromCart);
+    localStorage.clear();
+    window.location.href = '../index.html';
+
+});
+
