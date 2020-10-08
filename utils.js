@@ -11,6 +11,7 @@ export const CART = 'CART';
     const img = document.createElement('img');
     const description = document.createElement('p');
     const price = document.createElement('p');
+    const drop = document.createElement('select');
     const button = document.createElement('button');
 
     li.classList.add('id');
@@ -31,6 +32,18 @@ export const CART = 'CART';
     price.classList.add('price');
     price.textContent = `Cost ${items.price}`;
     
+    drop.classList.add('drop');
+    for (let i = 1; i <= 10; i++){
+        const option = document.createElement('OPTION'); 
+        option.text = i;
+        option.value = i;
+        drop.append(option);
+    }
+    drop.addEventListener('change', (e) => {
+        console.log(e.target.value);
+    });
+
+
     button.textContent = 'Add to inventory';
     button.addEventListener('click', () => {
         const cart = getFromLocalStorage('CART') || [];
@@ -39,7 +52,7 @@ export const CART = 'CART';
         if (itemInCart === undefined) {
             const newCartItem = {
                 id: items.id,
-                quantity: 1,
+                quantity: drop.value,
             };
             cart.push(newCartItem);
         } else {
@@ -55,6 +68,7 @@ export const CART = 'CART';
     li.append(img);
     li.append(description);
     li.append(price);
+    li.append(drop);
     li.append(button);
     return li;
 }           
