@@ -1,0 +1,29 @@
+header {
+    height: 100px;
+    width: auto;
+    background-color: darksalmon;
+    border: dimgray;
+    border: solid;
+
+
+}
+h1 {
+    height: 25px;
+}
+main {
+    width: 100%;
+    display: grid;
+    background-color: darkkhaki;
+    align-items: center;
+    
+
+}
+section {
+    height: 600px;
+    width: 100px;
+    display: grid;
+    justify-items: center;
+    flex-direction: row;
+    justify-self: center;
+    align-items: center;   
+}
