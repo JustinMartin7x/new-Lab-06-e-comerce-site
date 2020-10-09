@@ -102,3 +102,8 @@ export function getLocalStorageItems() {
     } return localStorageItems;
 
 }
+export function addNewItem(newItem) {
+    const localStoredItems = getLocalStorageItems();
+    localStoredItems.push(newItem);
+    setInLocalStorage(PRODUCTS, localStoredItems);
+}

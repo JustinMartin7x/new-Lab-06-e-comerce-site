@@ -1,3 +1,7 @@
+import { addNewItem } from '../utils.js';
+
+
+
 const submitForm = document.querySelector('form');
 
 
@@ -12,7 +16,7 @@ submitForm.addEventListener('submit', (e) => {
     const crafter = input.get('crafter');
     const image = input.get('image');
     const description = input.get('description');
-    const price = input.get(price);
+    const price = input.get('price');
 
     const newItem = {
 
@@ -21,14 +25,11 @@ submitForm.addEventListener('submit', (e) => {
         crafter: crafter,
         image: image,
         description: description,
-        price: price,
+        price: Number(price),
     };
+    console.log(newItem);
+    addNewItem(newItem);
 
     
 
-
-
-
-
-
-})
+});
