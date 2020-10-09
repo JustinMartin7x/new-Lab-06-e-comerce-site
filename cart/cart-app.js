@@ -1,7 +1,8 @@
 import { renderTable, calcTotal } from './cart-utils.js';
-import { items } from '../data.js';
-import { getFromLocalStorage } from '../utils.js';
-import { CART, PRODUCTS } from '../constants.js';
+import { getFromLocalStorage, getLocalStorageItems} from '../utils.js';
+import { CART } from '../constants.js';
+
+const items = getLocalStorageItems();
 
 
 const cartArray = getFromLocalStorage(CART) || [];

@@ -1,5 +1,5 @@
-import { findById } from '../utils.js';
-import { items } from '../data.js';
+import { findById, getLocalStorageItems } from '../utils.js';
+const items = getLocalStorageItems();
 
 
 
